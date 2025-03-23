@@ -4,18 +4,21 @@
  * and open the template in the editor.
  */
 package Vista;
+import paquete.Modelo;
+import paquete.Controlador;
 
-/**
- *
- * @author ASUS
- */
 public class Principal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Principal
-     */
+
+   //uniendo a vista con el toxico y el Modelo
+    Controlador objContr;
+    Modelo objModelo;
     public Principal() {
         initComponents();
+        //uniendo a vista con el toxico y el modelo
+        objModelo = new Modelo();
+        Acerca_de acerca = new Acerca_de();
+        objContr = new Controlador(acerca, this, objModelo);
     }
 
     /**
@@ -27,21 +30,116 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        mCrear = new javax.swing.JMenuItem();
+        mIngresar = new javax.swing.JMenuItem();
+        mMostrarM = new javax.swing.JMenuItem();
+        mMostrarL = new javax.swing.JMenuItem();
+        mSalir = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        mInstructivo = new javax.swing.JMenuItem();
+        mAcercade = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Logo UETS.png"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel2.setText("INFORMÁTICA");
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel3.setText("PRACTICA: VECTORES CON MVC");
+
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jMenu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenu1.setText("Opciones");
+
+        mCrear.setText("Crear Vector");
+        jMenu1.add(mCrear);
+
+        mIngresar.setText("Ingresar Datos");
+        jMenu1.add(mIngresar);
+
+        mMostrarM.setText("Mostrar Mayor");
+        mMostrarM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mMostrarMActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mMostrarM);
+
+        mMostrarL.setText("Mostrar Listado");
+        jMenu1.add(mMostrarL);
+
+        mSalir.setText("Salir");
+        jMenu1.add(mSalir);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenu2.setText("Ayuda");
+
+        mInstructivo.setText("Instructivo");
+        jMenu2.add(mInstructivo);
+
+        mAcercade.setText("Acerca de");
+        mAcercade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mAcercadeActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mAcercade);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 819, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 151, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(196, 196, 196))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(155, 155, 155))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 461, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mMostrarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mMostrarMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mMostrarMActionPerformed
+
+    private void mAcercadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mAcercadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mAcercadeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +177,18 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JMenuItem mAcercade;
+    public javax.swing.JMenuItem mCrear;
+    public javax.swing.JMenuItem mIngresar;
+    public javax.swing.JMenuItem mInstructivo;
+    public javax.swing.JMenuItem mMostrarL;
+    public javax.swing.JMenuItem mMostrarM;
+    public javax.swing.JMenuItem mSalir;
     // End of variables declaration//GEN-END:variables
 }

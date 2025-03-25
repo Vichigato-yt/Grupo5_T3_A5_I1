@@ -35,9 +35,15 @@ public class Controlador implements ActionListener{
     private Modelo $objModelo;
     String r;
     
-    public Controlador(Acerca_de $Acerca,Principal $Principal, Modelo $objModelo) {
+    public Controlador(Acerca_de $Acerca,Principal $Principal, Modelo $objModelo,Instructivo $Instructivo,
+                        Crear_Vector $Crear, Ingresar_Datos $Ingresar,Mostrar_Mayor $MostrarM,Mostrar_Listado $MostrarL) {
         this.$Principal = $Principal;
         this.$Acerca = $Acerca;
+        this.$Instructivo = $Instructivo;
+        this.$Crear = $Crear;
+        this.$Ingresar = $Ingresar;
+        this.$MostrarM = $MostrarM;
+        this.$MostrarL = $MostrarL;
         this.$objModelo = $objModelo;
         this.$Principal.mCrear.addActionListener(this);
         this.$Principal.mIngresar.addActionListener(this);
@@ -47,12 +53,19 @@ public class Controlador implements ActionListener{
         this.$Principal.mInstructivo.addActionListener(this);
         this.$Principal.mAcercade.addActionListener(this);
         this.$Acerca.btnCerrar.addActionListener(this);
+        this.$Instructivo.btnCerrar.addActionListener(this);
+        this.$Crear.btnCerrar.addActionListener(this);
+        this.$Ingresar.btnCerrar.addActionListener(this);
+        this.$MostrarM.btnCerrar.addActionListener(this);
+        this.$MostrarL.btnCerrar.addActionListener(this);
     } 
 
    
 @Override
     public void actionPerformed(ActionEvent e){
         Object botonPresionado = e.getSource();
+        
+              
         //frmAcercade
         if (botonPresionado == this.$Principal.mAcercade) { 
             this.$Acerca.setVisible(true);
@@ -62,21 +75,43 @@ public class Controlador implements ActionListener{
         }
         //Instructivo
         if (botonPresionado == this.$Principal.mInstructivo) { 
-            this.$Acerca.setVisible(true);
+            this.$Instructivo.setVisible(true);
         }
-        
+        if (botonPresionado == this.$Instructivo.btnCerrar) {
+            this.$Instructivo.setVisible(false);          
+        }
+        //Mostrar listado
         if (botonPresionado == this.$Principal.mMostrarL) { 
-            this.$Acerca.setVisible(true);
+            this.$MostrarL.setVisible(true);
         }
+        if (botonPresionado == this.$MostrarL.btnCerrar) {
+            this.$MostrarL.setVisible(false);          
+        }
+        //Mostrar Mayor
         if (botonPresionado == this.$Principal.mMostrarM) { 
-            this.$Acerca.setVisible(true);
+            this.$MostrarM.setVisible(true);
         }
+        if (botonPresionado == this.$MostrarM.btnCerrar) {
+            this.$MostrarM.setVisible(false);          
+        }
+        //ingresar datos
         if (botonPresionado == this.$Principal.mIngresar) { 
-            this.$Acerca.setVisible(true);
+            this.$Ingresar.setVisible(true);
+            this.$Principal.mMostrarL.setEnabled(true);
+            this.$Principal.mMostrarM.setEnabled(true);
         }
+        if (botonPresionado == this.$Ingresar.btnCerrar) {
+            this.$Ingresar.setVisible(false);          
+        }
+        //crear vector
         if (botonPresionado == this.$Principal.mCrear) { 
-            this.$Acerca.setVisible(true);
+            this.$Crear.setVisible(true);
+            this.$Principal.mIngresar.setEnabled(true);
         }
+        if (botonPresionado == this.$Crear.btnCerrar) {
+            this.$Crear.setVisible(false);          
+        }
+        //salir
         if (botonPresionado == this.$Principal.mSalir) {
             System.exit(0);
         }

@@ -18,7 +18,15 @@ public class Principal extends javax.swing.JFrame {
         //uniendo a vista con el toxico y el modelo
         objModelo = new Modelo();
         Acerca_de acerca = new Acerca_de();
-        objContr = new Controlador(acerca, this, objModelo);
+        Instructivo Instructivo = new Instructivo();
+        Crear_Vector crear = new Crear_Vector();
+        Ingresar_Datos ingresar = new Ingresar_Datos();
+        Mostrar_Mayor mostrarM = new Mostrar_Mayor();
+        Mostrar_Listado mostrarL = new Mostrar_Listado();
+        objContr = new Controlador(acerca, this, objModelo, Instructivo, crear, ingresar, mostrarM, mostrarL);
+        mIngresar.setEnabled(false);
+        mMostrarM.setEnabled(false);
+        mMostrarL.setEnabled(false);        
     }
 
     /**
@@ -60,6 +68,11 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.setText("Opciones");
 
         mCrear.setText("Crear Vector");
+        mCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mCrearActionPerformed(evt);
+            }
+        });
         jMenu1.add(mCrear);
 
         mIngresar.setText("Ingresar Datos");
@@ -140,6 +153,10 @@ public class Principal extends javax.swing.JFrame {
     private void mAcercadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mAcercadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mAcercadeActionPerformed
+
+    private void mCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCrearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mCrearActionPerformed
 
     /**
      * @param args the command line arguments

@@ -69,7 +69,7 @@ public class Acerca_de extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         jLabel2.setText("Mia Ortogonal");
 
-        ftMajo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Foto.png"))); // NOI18N
+        ftMajo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/mia.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         jLabel3.setText("Majo");

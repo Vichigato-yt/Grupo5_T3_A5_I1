@@ -59,7 +59,7 @@ public class Acerca_de extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        ftMia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Foto.png"))); // NOI18N
+        ftMia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ft.esemtia.png"))); // NOI18N
 
         ftMajo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Foto.png"))); // NOI18N
 

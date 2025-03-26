@@ -108,8 +108,10 @@ public class Controlador implements ActionListener{
             this.$Crear.setVisible(true);
             this.$Principal.mIngresar.setEnabled(true);
             //modelo
-            this.$objModelo.setTamaño(Integer.parseInt(txtTamaño));
         }
+        if (botonPresionado == this.$Crear.btnEnviar)
+            this.$objModelo.setTamaño(Integer.parseInt(txtTamaño));
+
         if (botonPresionado == this.$Crear.btnCerrar) {
             this.$Crear.setVisible(false);          
         }

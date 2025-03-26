@@ -99,6 +99,7 @@ public class Controlador implements ActionListener{
             this.$Ingresar.setVisible(true);
             this.$Principal.mMostrarL.setEnabled(true);
             this.$Principal.mMostrarM.setEnabled(true);
+            
         }
         if (botonPresionado == this.$Ingresar.btnCerrar) {
             this.$Ingresar.setVisible(false);          
@@ -106,9 +107,9 @@ public class Controlador implements ActionListener{
         //crear vector
         if (botonPresionado == this.$Principal.mCrear) { 
             this.$Crear.setVisible(true);
-            this.$Principal.mIngresar.setEnabled(true);
-            //modelo
-            this.$objModelo.setTamaño(Integer.parseInt(txtTamaño));
+            this.$Principal.mIngresar.setEnabled(true);           
+            if (botonPresionado == this.$Crear.btnEnviar)
+                this.$objModelo.setTamaño(Integer.parseInt(txtTamaño));
         }
         if (botonPresionado == this.$Crear.btnCerrar) {
             this.$Crear.setVisible(false);          

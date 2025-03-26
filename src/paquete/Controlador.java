@@ -36,7 +36,7 @@ public class Controlador implements ActionListener{
     String r;
     
     public Controlador(Acerca_de $Acerca,Principal $Principal, Modelo $objModelo,Instructivo $Instructivo,
-                        Crear_Vector $Crear, Ingresar_Datos $Ingresar,Mostrar_Mayor $MostrarM,Mostrar_Listado $MostrarL) {
+    Crear_Vector $Crear, Ingresar_Datos $Ingresar,Mostrar_Mayor $MostrarM,Mostrar_Listado $MostrarL) {
         this.$Principal = $Principal;
         this.$Acerca = $Acerca;
         this.$Instructivo = $Instructivo;
@@ -107,6 +107,8 @@ public class Controlador implements ActionListener{
         if (botonPresionado == this.$Principal.mCrear) { 
             this.$Crear.setVisible(true);
             this.$Principal.mIngresar.setEnabled(true);
+            //modelo
+            this.$Crear.txtTamaño.
         }
         if (botonPresionado == this.$Crear.btnCerrar) {
             this.$Crear.setVisible(false);          

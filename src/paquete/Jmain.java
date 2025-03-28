@@ -10,7 +10,5 @@ public class Jmain {
         menu.setVisible(true);
         
         Instructivo vista = new Instructivo();
-
-        new ControladorInstructivo(vista);  
     }
 }

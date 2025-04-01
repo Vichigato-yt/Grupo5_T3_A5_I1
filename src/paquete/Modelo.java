@@ -2,10 +2,6 @@
 
 package paquete;
 
-
-
-package paquete;
-
 public class Modelo {
     private int[] vector;
     private int tamaño;

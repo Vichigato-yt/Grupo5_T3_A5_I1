@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package paquete;
-import javax.swing.JOptionPane;
 //importo el menu principal
 import Vista.Principal;
 //importo los JPanel del menu AYUDA
@@ -111,15 +110,17 @@ public class Controlador implements ActionListener{
         }
 
         // Botón Agregar (Ingreso de datos al Modelo)
-        if (e.getSource() == $Ingresar.btnGuardar) {
+        if (botonPresionado == $Ingresar.btnGuardar) {
             try {
                 int numero = Integer.parseInt($Ingresar.txtDato.getText());
                 $objModelo.ingresarDato(numero);
-                $Ingresar.lblMensaje.setText("✅ Dato ingresado correctamente.");
+                $Ingresar.lblMensaje.setText("Dato ingresado correctamente.");
             } catch (NumberFormatException ex) {
-                $Ingresar.lblMensaje.setText("❌ Por favor, ingresa un número válido.");
+                $Ingresar.lblMensaje.setText("Por favor, ingresa un número válido.");
             }
-        $Ingresar.txtDato.setText("");
+            $Ingresar.txtDato.setText("");
+            this.$Principal.mMostrarM.setEnabled(true);
+            this.$Principal.mMostrarL.setEnabled(true);
         }
         if (botonPresionado == this.$Ingresar.btnCerrar) {
             this.$Ingresar.setVisible(false);          

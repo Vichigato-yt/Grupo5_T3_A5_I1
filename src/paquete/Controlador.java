@@ -61,6 +61,7 @@ public class Controlador implements ActionListener{
         this.$MostrarM.btnMostrarM.addActionListener(this);
         this.$MostrarL.btnCerrar.addActionListener(this);
         this.$MostrarL.btnMostrar.addActionListener(this);
+        this.$Ingresar.btnGuardar.addActionListener(this);
     } 
 
    
@@ -107,10 +108,13 @@ public class Controlador implements ActionListener{
          // Abrir el panel de Ingresar Datos
         if (botonPresionado == this.$Principal.mIngresar) { 
             this.$Ingresar.setVisible(true);
+            this.$Principal.mMostrarM.setEnabled(true);
+            this.$Principal.mMostrarL.setEnabled(true);
         }
 
         // Botón Agregar (Ingreso de datos al Modelo)
         if (e.getSource() == $Ingresar.btnGuardar) {
+            
             String texto = $Ingresar.txtDato.getText().trim(); // Eliminamos espacios en blanco
             if (!texto.isEmpty()) { // Aseguramos que no esté vacío
             try {
@@ -125,8 +129,6 @@ public class Controlador implements ActionListener{
             $Ingresar.lblMensaje.setText(" Error: El campo está vacío.");
         }
             $Ingresar.txtDato.setText(""); // Limpiamos el campo después de procesar
-            this.$Principal.mMostrarM.setEnabled(true);
-            this.$Principal.mMostrarL.setEnabled(true);
         }
         if (botonPresionado == this.$Ingresar.btnCerrar) {
             this.$Ingresar.setVisible(false);          

@@ -5,17 +5,28 @@
  */
 package Vista;
 
+import paquete.Controlador;
+import paquete.Modelo;
+
 /**
  *
  * @author ASUS
  */
 public class Ingresar_Datos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Ingresar_Datos
-     */
+    Controlador objContr;
+    Modelo objModelo;
     public Ingresar_Datos() {
         initComponents();
+        //uniendo a vista con el toxico y el modelo
+        objModelo = new Modelo();
+        Acerca_de acerca = new Acerca_de();
+        Instructivo Instructivo = new Instructivo();
+        Principal principal = new Principal();
+        Crear_Vector crear = new Crear_Vector();
+        Mostrar_Mayor mostrarM = new Mostrar_Mayor();
+        Mostrar_Listado mostrarL = new Mostrar_Listado();
+        objContr = new Controlador(acerca, principal, objModelo, Instructivo, crear, this, mostrarM, mostrarL);
     }
 
     /**

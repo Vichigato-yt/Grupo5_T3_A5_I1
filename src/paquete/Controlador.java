@@ -110,15 +110,21 @@ public class Controlador implements ActionListener{
         }
 
         // Botón Agregar (Ingreso de datos al Modelo)
-        if (botonPresionado == $Ingresar.btnGuardar) {
+        if (e.getSource() == $Ingresar.btnGuardar) {
+            String texto = $Ingresar.txtDato.getText().trim(); // Eliminamos espacios en blanco
+            if (!texto.isEmpty()) { // Aseguramos que no esté vacío
             try {
-                int numero = Integer.parseInt($Ingresar.txtDato.getText());
+                int numero = Integer.parseInt(texto);
                 $objModelo.ingresarDato(numero);
                 $Ingresar.lblMensaje.setText("Dato ingresado correctamente.");
+                System.out.println(java.util.Arrays.toString($objModelo.getVector())); // Muestra el vector en consola
             } catch (NumberFormatException ex) {
-                $Ingresar.lblMensaje.setText("Por favor, ingresa un número válido.");
+            $Ingresar.lblMensaje.setText("Error: Ingresa un número válido.");
             }
-            $Ingresar.txtDato.setText("");
+        } else {
+            $Ingresar.lblMensaje.setText(" Error: El campo está vacío.");
+        }
+            $Ingresar.txtDato.setText(""); // Limpiamos el campo después de procesar
             this.$Principal.mMostrarM.setEnabled(true);
             this.$Principal.mMostrarL.setEnabled(true);
         }

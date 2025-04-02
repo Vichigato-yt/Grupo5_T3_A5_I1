@@ -5,7 +5,7 @@ package paquete;
 public class Modelo {
     private int[] vector;
     private int tamaño;
-    private int dato;
+    private int dato = 0;
 
     public int[] getVector() {
         return vector;

@@ -30,7 +30,7 @@ public class Mostrar_Mayor extends javax.swing.JFrame {
         btnCerrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnMostrarM = new javax.swing.JButton();
         lblMostrar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,10 +44,10 @@ public class Mostrar_Mayor extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel2.setText("El mayor número es");
 
-        jButton1.setText("Calcular mayor");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnMostrarM.setText("Calcular mayor");
+        btnMostrarM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnMostrarMActionPerformed(evt);
             }
         });
 
@@ -66,18 +66,19 @@ public class Mostrar_Mayor extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(219, 219, 219)
+                                .addGap(177, 177, 177)
                                 .addComponent(jLabel1))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(249, 249, 249)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton1)
+                                .addGap(215, 215, 215)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblMostrar)
-                                        .addGap(51, 51, 51)))))
-                        .addGap(0, 235, Short.MAX_VALUE)))
+                                    .addComponent(btnMostrarM))))
+                        .addGap(0, 169, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblMostrar)
+                .addGap(250, 250, 250))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,7 +86,7 @@ public class Mostrar_Mayor extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(jLabel1)
                 .addGap(43, 43, 43)
-                .addComponent(jButton1)
+                .addComponent(btnMostrarM)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
@@ -98,9 +99,9 @@ public class Mostrar_Mayor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnMostrarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnMostrarMActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,7 +140,7 @@ public class Mostrar_Mayor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCerrar;
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnMostrarM;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel lblMostrar;

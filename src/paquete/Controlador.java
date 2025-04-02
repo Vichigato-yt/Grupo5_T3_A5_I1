@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package paquete;
+import javax.swing.JOptionPane;
 //importo el menu principal
 import Vista.Principal;
 //importo los JPanel del menu AYUDA
@@ -55,9 +56,12 @@ public class Controlador implements ActionListener{
         this.$Acerca.btnCerrar.addActionListener(this);
         this.$Instructivo.btnCerrar.addActionListener(this);
         this.$Crear.btnCerrar.addActionListener(this);
+        this.$Crear.btnEnviar.addActionListener(this);
         this.$Ingresar.btnCerrar.addActionListener(this);
         this.$MostrarM.btnCerrar.addActionListener(this);
+        this.$MostrarM.btnMostrarM.addActionListener(this);
         this.$MostrarL.btnCerrar.addActionListener(this);
+        this.$MostrarL.btnMostrar.addActionListener(this);
     } 
 
    
@@ -82,6 +86,10 @@ public class Controlador implements ActionListener{
         if (botonPresionado == this.$Principal.mMostrarL) { 
             this.$MostrarL.setVisible(true);
         }
+        if (botonPresionado == this.$MostrarL.btnMostrar){
+            String listado = $objModelo.obtenerListado();
+            $MostrarL.txaMostrar.setText(listado);
+        }
         if (botonPresionado == this.$MostrarL.btnCerrar) {
             this.$MostrarL.setVisible(false);          
         }
@@ -89,14 +97,29 @@ public class Controlador implements ActionListener{
         if (botonPresionado == this.$Principal.mMostrarM) { 
             this.$MostrarM.setVisible(true);
         }
+        if (botonPresionado == this.$MostrarM.btnMostrarM){
+            int mayor = $objModelo.encontrarMayor();
+            $MostrarM.lblMostrar.setText(""+mayor);
+        }
         if (botonPresionado == this.$MostrarM.btnCerrar) {
             this.$MostrarM.setVisible(false);          
         }
         //ingresar datos
+         // Abrir el panel de Ingresar Datos
         if (botonPresionado == this.$Principal.mIngresar) { 
             this.$Ingresar.setVisible(true);
-            this.$Principal.mMostrarL.setEnabled(true);
-            this.$Principal.mMostrarM.setEnabled(true);
+        }
+
+        // Botón Agregar (Ingreso de datos al Modelo)
+        if (e.getSource() == $Ingresar.btnGuardar) {
+            try {
+                int numero = Integer.parseInt($Ingresar.txtDato.getText());
+                $objModelo.ingresarDato(numero);
+                $Ingresar.lblMensaje.setText("✅ Dato ingresado correctamente.");
+            } catch (NumberFormatException ex) {
+                $Ingresar.lblMensaje.setText("❌ Por favor, ingresa un número válido.");
+            }
+        $Ingresar.txtDato.setText("");
         }
         if (botonPresionado == this.$Ingresar.btnCerrar) {
             this.$Ingresar.setVisible(false);          
@@ -104,7 +127,14 @@ public class Controlador implements ActionListener{
         //crear vector
         if (botonPresionado == this.$Principal.mCrear) { 
             this.$Crear.setVisible(true);
-            this.$Principal.mIngresar.setEnabled(true);
+            this.$Principal.mIngresar.setEnabled(true); 
+        }
+        //Crear_vvector
+        if (botonPresionado == this.$Crear.btnEnviar){
+            int tamaño = Integer.parseInt(this.$Crear.txtTamaño.getText());
+            $objModelo.setTamaño(tamaño);
+            $objModelo.crear();
+            this.$Crear.txtTamaño.setText("");
         }
         if (botonPresionado == this.$Crear.btnCerrar) {
             this.$Crear.setVisible(false);          

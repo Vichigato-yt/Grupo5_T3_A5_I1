@@ -5,6 +5,7 @@ package paquete;
 public class Modelo {
     private int[] vector;
     private int tamaño;
+    private int dato;
 
     public int[] getVector() {
         return vector;
@@ -26,17 +27,24 @@ public class Modelo {
         vector = new int[tamaño];
     }
 
-    public void ingresarDato(int index, int dato) {
-        if (index >= 0 && index < tamaño) {
-            vector[index] = dato;
-        } else {
-            System.out.println("Índice fuera de rango.");
+    public int getDato() {
+        return dato;
+    }
+
+    public void setDato(int dato) {
+        this.dato = dato;
+    }
+    
+    public void ingresarDato(int numero) {
+        if (dato < tamaño) {
+            vector[dato] = numero;
+            dato++;
         }
     }
 
-    public int obtenerMayor() {
-        int mayor = Integer.MIN_VALUE;
-        for (int i = 0; i < tamaño; i++) {
+    public int encontrarMayor() {
+        int mayor = vector[0];
+        for (int i = 1; i < tamaño; i++) {
             if (vector[i] > mayor) {
                 mayor = vector[i];
             }
